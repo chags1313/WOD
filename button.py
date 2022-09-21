@@ -15,7 +15,6 @@ import pandas as pd
 from deta import Deta
 import streamlit.components.v1 as components
 import plotly.express as px
-import datetime
 import plotly.graph_objects as go
 from datetime import date
 import itertools
@@ -44,7 +43,7 @@ db = deta.Base("fitusers")
 
 
 
-date = datetime.now()
+date = date.now()
 
 
 
