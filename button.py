@@ -44,7 +44,7 @@ db = deta.Base("fitusers")
 
 
 
-date = date.today()
+date = date.now()
 
 
 
