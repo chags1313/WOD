@@ -1,9 +1,5 @@
-mediapipe
-tensorflow
 plotly
 streamlit_option_menu
-opencv-python-headless
-streamlit-webrtc
 streamlit
 pandas
 numpy
