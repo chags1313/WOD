@@ -2297,7 +2297,7 @@ $(function () {
 
     with column1:
         colored_header("Workout of the Day")
-        components.html(full_html, height=275)
+        components.html(full_html, height=290)
         if 'auth_status' in st.session_state:
             try:
                 wodf = wo_db.fetch().items
