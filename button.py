@@ -2324,7 +2324,6 @@ $(function () {
                 st.metric(metric_string, value = repmax_weight, delta = repmax_diff)
                 lastwo = lastwo.reset_index()
                 lastwo = lastwo[lastwo['Movements'].str.len() > 1]
-                st.write(lastwo)
                 st.write("Last Workout: ", lastwo['Workout'].iloc[0], " | Performance: ", lastwo['Performance'].iloc[0], " | Date: ", lastwo['date'].iloc[0])
             except:
                 pass
