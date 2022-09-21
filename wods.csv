@@ -1,0 +1,42 @@
+﻿Workout,Rounds,Reps,Max Time,Movement,RX Men,RX Women,Category,Notes
+Amanda,1,"9,7,5",None,"Muscle-Ups, Snatch",135,95,Reps,None
+Andi,1,"100, 100, 100, 100",None,"Hang Power Snatch, Push Press, Sumo Deadlift High Pulls, Front Squats",65,45,For Time,None
+Angie,1,"100, 100, 100, 100",None,"Pull-Ups, Push-Ups, Sit-Ups, Squats",nan,None,For Time,None
+Annie,1,"50, 40, 30, 20, 10",None,"Double-Unders, Sit-Ups",nan,None,For Time,None
+Barbara,5,"20, 30, 40, 50",None,"Pull-Ups, Push-Ups, Sit-Ups, Squats",nan,None,For Time,Rest 3 Minutes Between Rounds
+Barbara Ann,5,"20, 30, 40, 50",None,"Handstand Push-Ups, Deadlifts, Sit-Ups, Double-Unders",135,95,For Time,Rest 3 Minutes Between Rounds
+Candy,5,"20, 40, 60",30,"Pull-Ups, Push-Ups, Squats",nan,None,For Time,None
+Chelsea,1,"5, 10, 15",None,"Pull-Ups, Push-Ups, Squats",None,None,EMOM,None
+Cindy,AMRAP,AMRAP,20,"Pull-Ups, Push-Ups, Squats",None,None,AMRAP,None
+Diane,1,"21, 15, 9",None,"Deadlift, Handstand Push-Ups",225,155,For Time,None
+Elizabeth,1,"21, 15, 9",None,"Clean, Ring Dips",135,95,For Time,None
+Ellen,3,"20, 21, 12",None,"Burpees, Dumbell Snatches, Dumbell Thrusters",50,35,For Time,Use a single dumbell on the snatches a pair of dumbells for the thrusters
+Eva,5,"800m, 30, 30",None,"Run, Kettlebell Swings, Pull-Ups",None,None,For Time,None
+Fran,1,"21, 15, 9",None,"Thrusters, Pulls-Ups",95,65,For Time,None
+Grace,1,30,None,Clean and Jerk,135,95,For Time,None
+Grettel,10,"3, 3",None,"Clean and Jerk, Burpees Over the Bar",135,95,For Time,None
+Gwen,1,"15, 12, 9",None,Clean and Jerk,None,None,For Time,Touch and go at floor only. Even a re-grip off the floor is a foul. No dumping. Use same load for each set. Rest as needed between sets.
+Helen,3,"400m, 21, 12",None,"Run, Kettlebell Swings, Pull-Ups",None,None,For Time,None
+Ingrid,10,"3, 3",None,"Snatches, Burpees Over the Bar",135,95,For Time,None
+Isabel,1,30,None,Snatches ,135,95,For Time,None
+Jackie,1,"100m, 50, 30",None,"Row, Thrusters, Pull-Ups",45,35,For Time,None
+Karen,1,150,None,Wall-Balls,20,14,For Time,None
+Kelly,5,"400m, 30, 30",None,"Run, Box Jumps, Wall-Balls",24,20,For Time,None
+Lane,5,Max Reps,None,"Hang Power Snatches, Handstand Push-Ups",None,None,Max Reps,3/4 body weight hang power snatches. Rest as needed between rounds.
+Linda,1,"10, 9, 8, 7, 6, 5, 4, 3, 2, 1",None,"Deadlifts, Bench Press, Cleans",None,None,For Time,"1.5x body weight deadlift, 1x body weight bench press, .75 body weight cleans"
+Lyla,5,Max Reps,None,"Bench Press, Pull-Ups",None,None,Max Reps,"Bench press body weight, pull-ups"
+Maggie,5,"20, 40, 60",None,"Handstand Push-Ups, Pull-Ups, Single-Leg Squats",None,None,For Time,Alternating single leg squats
+Mary,AMRAP,"5, 10, 15",20,"Handstand Push-Ups, Pistol Squats, Pull-Ups",None,None,AMRAP,None
+Megan,1,"21, 15, 9",None,"Burpees, Kettlebell Swings, Double-Unders",53,35,For Time,None
+Nancy,5,"400m, 15",None,"Run, Overhead Squats",95,65,For Time,None
+Nicole,AMRAP,"400m, Pull-Ups",20,"Run, Pull-Ups",None,None,AMRAP,As many reps as possible for pull-ups
+Adrian,7,"3, 5, 7, 9",None,"Forward Rolls, Wall Climbs, Toes to Bar, Box Jumps",None,None,For Time,30 inch box jumps
+Alexander,5,"31, 12",None,"Back Squats, Power Cleans","135, 185","95, 125",For Time,None
+Andy,1,"25, 50, 75, 1.5 mile, 75, 50, 25",None,"Thrusters, Box Jumps, Deadlifts, Run, Deadlifts, Box Jumps, Thrusters",None,None,For Time,"Wearing a 20 pound vest, 115 pound thrusters, 24 inch box"
+Arnie,1,"21, 50, 21, 50, 21, 50, 21",None,"Turkish Get-Ups, Kettlebell Swings, Overhead Squats, Kettlebell Swings, Turkish Get-Ups",None,None,For Time,None
+Artie,AMRAP,"5, 10, 15, 5, 10",20,"Pull-Ups, Push-Ups, Squats, Pull-Ups, Thrusters",95,65,AMRAP,None
+Badger,3,"30, 30, 800m",None,"Squat Cleans, Pull-Ups, Run",95,65,For Time,None
+Barraza,AMRAP,"200m, 9, 6",18,"Run, Deadlifts, Burpee Bar Muscle-Ups",275,185,AMRAP,None
+Bell,3,"21, 15, 9",None,"Deadlifts, Pull-Ups, Front Squats",185,125,For Time,None
+Bert,1,"50, 400m, 100, 400m, 150, 400m, 200, 400m, 150, 400m, 100, 400m, 50",None,"Burpees, Run, Push-Ups, Run, Walking-Lunges, Run, Walking-Lunges, Run, Push-Ups, Run, Burpees",None,None,For Time,None
+Big Sexy,5,"6, 6, 5, 5, 4, 4",None,"Deadlifts, Burpees, Cleans, Chest-to-Bar Pull-Ups, Thrusters, Muscle-Ups",None,None,For Time,"315/205 deadlifts, 225/155 cleans, 155/105 thrusters"
