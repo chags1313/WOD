@@ -2457,7 +2457,7 @@ if menu == 'Max':
         colored_header("Records")
         st.dataframe(maxdf1[['lift', 'weight', 'date']])
     else:
-        st.markdown("![Alt Text](https://i0.wp.com/www.signsrxusa.com/wp-content/uploads/2020/07/Percentage-Charts-55-550.png?resize=900%2C800&ssl=1)")
+        st.markdown("![Alt Text](https://i0.wp.com/www.signsrxusa.com/wp-content/uploads/2020/07/Percentage-Charts-55-550.png?resize=1000%2C800&ssl=1)")
 
 
                 
