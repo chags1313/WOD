@@ -25,7 +25,7 @@ from numpy import random
 
 st.set_page_config(layout="wide",
     page_title="Home WOD",
-    page_icon="🏋️")
+    page_icon="weight_lifter")
 
 #hide streamlit menu bar
 hide_streamlit_style = """
