@@ -7,15 +7,10 @@ Created on Tue Aug 23 10:32:38 2022
 import streamlit as st
 from streamlit_option_menu import option_menu
 import pandas as pd
-from streamlit_webrtc import webrtc_streamer, VideoProcessorBase
-import cv2
 import numpy as np
 import os
 from matplotlib import pyplot as plt
 import time
-import mediapipe as mp
-from tensorflow import keras
-import av
 import pandas as pd
 from deta import Deta
 import streamlit.components.v1 as components
@@ -24,10 +19,7 @@ import datetime
 import plotly.graph_objects as go
 from datetime import date
 import itertools
-import streamlit.components.v1 as components
 from numpy import random
-from string import Template
-import jinja2
 
 #st.session_state.auth_status = None
 #st.session_state.user_name = None
@@ -65,77 +57,7 @@ wods = pd.read_csv(url)
 
 
 
-mp_holistic = mp.solutions.holistic 
-mp_drawing = mp.solutions.drawing_utils
 
-class OpenCamera (VideoProcessorBase):
-    def __init__(self) -> None :
-        self.sequence = []
-        self.sentence = []
-        self.threshold = 0.4
-        self.actions = np.array(['hello', 'thanks', 'i love you', 'stop', 'please', 'walk', 'argue', 'yes', 'see', 'good'])
-
-        self.time = 0
-
-
-    def mediapipe_detection(self,image, model):
-        self.image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-        self.image.flags.writeable = False                 
-        self.results = model.process(image)                
-        self.image.flags.writeable = True                   
-        self.image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
-        return self.image, self.results
-
-
-
-    def draw_styled_landmarks(self,image, results):
-
-    
-        mp_drawing.draw_landmarks(image, results.pose_landmarks, mp_holistic.POSE_CONNECTIONS, 
-                                mp_drawing.DrawingSpec(color=(121,22,76), thickness=2, circle_radius=4), 
-                                mp_drawing.DrawingSpec(color=(121,44,250), thickness=2, circle_radius=2)
-                                ) 
-        """
-        mp_drawing.draw_landmarks(image, results.pose_landmarks, mp_holistic.POSE_CONNECTIONS, 
-                                mp_drawing.DrawingSpec(color=(245,117,66), thickness=2, circle_radius=4), 
-                                mp_drawing.DrawingSpec(color=(245,66,230), thickness=2, circle_radius=2)
-                                ) """
-
-    def extract_keypoints(self, results):
-        self.key1 = np.array([[res.x, res.y, res.z, res.visibility] for res in results.pose_landmarks.landmark]).flatten() if results.pose_landmarks else np.zeros(33*4)
-        #self.key2 = np.array([[res.x, res.y, res.z] for res in results.face_landmarks.landmark]).flatten() if results.face_landmarks else np.zeros(468*3)
-        #self.lh = np.array([[res.x, res.y, res.z] for res in results.left_hand_landmarks.landmark]).flatten() if results.left_hand_landmarks else np.zeros(21*3)
-        #self.rh = np.array([[res.x, res.y, res.z] for res in results.right_hand_landmarks.landmark]).flatten() if results.right_hand_landmarks else np.zeros(21*3)
-        return np.concatenate([self.key1])
-    def update_time(self):
-        self.time = self.time + 1
-        return self.time
-
-
-    
-    def recv(self, frame):
-        img=frame.to_ndarray(format="bgr24")
-        with mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=0.5) as holistic:
-            image, results = self.mediapipe_detection(img,holistic)
-            self.draw_styled_landmarks(image, results)
-            # 2. Prediction logic
-            keypoints = self.extract_keypoints(results)
-            tim = self.update_time()
-            self.sequence.append(keypoints)
-            arr = keypoints.tolist()
-
-            #st.dataframe(pd.DataFrame(self.sequence))
-            
-            
-            
-                
-                
-            
-            cv2.rectangle(image, (0,0), (640, 40), (245, 117, 16), -1)
-            cv2.putText(image, ' '.join(''), (3,30),cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
-            
-        av.VideoFrame.from_ndarray(image, format="bgr24")      
-        return av.VideoFrame.from_ndarray(image, format="bgr24")
 HEADER_COLOR_CYCLE = itertools.cycle(
     [
         "#00c0f2",  # light-blue-70",
@@ -2464,15 +2386,6 @@ if menu == 'Workout Repo':
                     wo_db.put({"name": st.session_state.user_name, "date": str(date), "Workout": wkt, "Rounds": rds, "Reps": reps, "Max Time": mxtime, "Movements": mvmts, "Performance": perf1})
             
 
-if menu == 'Analyze':
-      colored_header("Analyze and Track Workout")
-      ctx = webrtc_streamer(
-        key="example",
-        video_processor_factory=OpenCamera,
-        rtc_configuration={ # Add this line
-            "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
-        }, media_stream_constraints={"video": True, "audio": False,}, async_processing=True
-    )
 if menu == 'Max':
     if 'auth_status' in st.session_state:
         colored_header("Track Max Progress")
