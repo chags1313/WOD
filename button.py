@@ -91,8 +91,7 @@ with st.sidebar:
 if menu == 'Account':
     st.header("Welcome to HWOD 🏋️‍")
     user_name = st.text_input("Enter your user name")
-    if 'user_name' not in st.session_state:
-        st.session_state.user_name = user_name
+    st.session_state.user_name = user_name
 
         #st.session_state.user_name = st.text_input("User Name", value = st.session_state.user_name)
 
@@ -111,7 +110,6 @@ if menu == 'Account':
         else:
             st.error("Incorrect password or user name. Please try again.")
 
-            #st.error("Incorrect password or user name. Please try again.")
     account_btn = st.button("Create Account")
     if account_btn:
         result1 = db.fetch().items
