@@ -92,8 +92,8 @@ if menu == 'Account':
     st.header("Welcome to HWOD 🏋️‍")
     if 'user_name' not in st.session_state:
         st.session_state.user_name = st.text_input("Enter your user name")
-    else:
-        st.session_state.user_name = st.text_input("User Name", value = st.session_state.user_name)
+
+        #st.session_state.user_name = st.text_input("User Name", value = st.session_state.user_name)
 
     st.session_state.password = st.text_input("Enter your password",type = 'password')
 
