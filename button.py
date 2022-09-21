@@ -90,40 +90,43 @@ with st.sidebar:
     
 if menu == 'Account':
     st.header("Welcome to DailyWOD 🏋️‍")
-    user_name = st.text_input("Enter your user name")
-    st.session_state.user_name = user_name
+    if 'user_name' not in st.session_state:
+      user_name = st.text_input("Enter your user name")
+      st.session_state.user_name = user_name
 
-        #st.session_state.user_name = st.text_input("User Name", value = st.session_state.user_name)
+          #st.session_state.user_name = st.text_input("User Name", value = st.session_state.user_name)
 
-    st.session_state.password = st.text_input("Enter your password",type = 'password')
+      st.session_state.password = st.text_input("Enter your password",type = 'password')
 
-    login_btn = st.button("Log In")
-    if login_btn:
-        result = db.fetch().items
-        df = pd.DataFrame(result)
-        user_check_df = df[df['user_name'] == st.session_state.user_name]
-        user_check_df = user_check_df.reset_index()
-        if  st.session_state.password == user_check_df['password'].max():
-            st.session_state.auth_status = True
-            db.put({"user_name": st.session_state.user_name, "password": st.session_state.password})
-            st.success("Lookin good " + st.session_state.user_name, icon = '🤘')
-        else:
-            st.error("Incorrect password or user name. Please try again.")
+      login_btn = st.button("Log In")
+      if login_btn:
+          result = db.fetch().items
+          df = pd.DataFrame(result)
+          user_check_df = df[df['user_name'] == st.session_state.user_name]
+          user_check_df = user_check_df.reset_index()
+          if  st.session_state.password == user_check_df['password'].max():
+              st.session_state.auth_status = True
+              db.put({"user_name": st.session_state.user_name, "password": st.session_state.password})
+              st.success("Lookin good " + st.session_state.user_name, icon = '🤘')
+          else:
+              st.error("Incorrect password or user name. Please try again.")
 
-    account_btn = st.button("Create Account")
-    if account_btn:
-        result1 = db.fetch().items
-        df1 = pd.DataFrame(result1)
-        user_check_df1 = df1[df1['user_name'] == st.session_state.user_name]
-        if len(user_check_df1) < 1:
-        
-            db.put({"user_name": st.session_state.user_name, "password": st.session_state.password})
-            st.info("Welcome " + st.session_state.user_name + " please proceed to login in with your new acount.")
-        else:
-            st.error("User Name Taken. If you already have an account, please enter your user name and select log in. If you are a new user, please enter a new user name.")
-    forgot_password = st.button("Change Password")
-    if forgot_password:
-        st.info("Please reach out to Cole @ hagencolej@gmail.com")
+      account_btn = st.button("Create Account")
+      if account_btn:
+          result1 = db.fetch().items
+          df1 = pd.DataFrame(result1)
+          user_check_df1 = df1[df1['user_name'] == st.session_state.user_name]
+          if len(user_check_df1) < 1:
+          
+              db.put({"user_name": st.session_state.user_name, "password": st.session_state.password})
+              st.info("Welcome " + st.session_state.user_name + " please proceed to login in with your new acount.")
+          else:
+              st.error("User Name Taken. If you already have an account, please enter your user name and select log in. If you are a new user, please enter a new user name.")
+      forgot_password = st.button("Change Password")
+      if forgot_password:
+          st.info("Please reach out to Cole @ hagencolej@gmail.com")
+    else:
+      st.info("Keep up the good work" + st.session_state.user_name, icon = '🤘')
     
 if menu == 'Home':
     if 'num' not in st.session_state:
