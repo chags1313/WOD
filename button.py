@@ -84,8 +84,8 @@ def colored_header(label, description=None, color=None):
 df = pd.DataFrame({'time': [1, 2, 3, 4, 5], 'weight': [160, 161, 166, 165, 167], 'calories': [114, 75, 84, 165, 167]})
 
 with st.sidebar:
-    menu = option_menu(None, ["Account", "Home", "Workout Repo", "Analyze", 'Max'], 
-    icons=['house',  "list-task", 'graph-up', 'moisture', 'table'], 
+    menu = option_menu(None, ["Account", "Home", "Workout Repo", 'Max'], 
+    icons=['person-lines-fill',  "house", 'table', 'graph-up', 'table'], 
     menu_icon="cast", default_index=1, orientation="vertical")
     
 if menu == 'Account':
