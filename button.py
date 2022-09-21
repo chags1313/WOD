@@ -25,7 +25,7 @@ from numpy import random
 
 st.set_page_config(layout="wide",
     page_title="Home WOD",
-    page_icon="chart_with_upwards_trend")
+    page_icon="🏋️")
 
 #hide streamlit menu bar
 hide_streamlit_style = """
@@ -89,7 +89,7 @@ with st.sidebar:
     menu_icon="cast", default_index=1, orientation="vertical")
     
 if menu == 'Account':
-    st.header("Welcome to HWOD 🏋️‍")
+    st.header("Welcome to DailyWOD 🏋️‍")
     user_name = st.text_input("Enter your user name")
     st.session_state.user_name = user_name
 
