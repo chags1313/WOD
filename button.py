@@ -90,7 +90,7 @@ with st.sidebar:
     
 if menu == 'Account':
     st.header("Welcome to DailyWOD 🏋️‍")
-    if 'user_name' not in st.session_state:
+    if 'auth_status' not in st.session_state:
       user_name = st.text_input("Enter your user name")
       st.session_state.user_name = user_name
 
