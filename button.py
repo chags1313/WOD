@@ -2277,7 +2277,7 @@ $(function () {
         thursday = len(wodf1[wodf1['dayname']=='Thursday']) * 2
         friday = len(wodf1[wodf1['dayname']=='Friday']) * 2
         saturday = len(wodf1[wodf1['dayname']=='Saturday']) * 2
-        sunday = len(wodf1[wodf1['dayname']=='Sundday']) * 2
+        sunday = len(wodf1[wodf1['dayname']=='Sunday']) * 2
     except:
         monday = 0
         tuesday = 0
@@ -2293,7 +2293,6 @@ $(function () {
     column1, column2 = st.columns(2)
     with column2:
         components.html(cals, height=550)
-        
 
     with column1:
         colored_header("Workout of the Day")
@@ -2305,8 +2304,8 @@ $(function () {
                 wodf1 = wodf1[wodf1['name'] == st.session_state.user_name]
                 wodf1['date'] = pd.to_datetime(wodf1['date'], errors = 'coerce')
                 lastwo = wodf1[wodf1['date'] == wodf1['date'].max()]
-                #st.write(wodf1['date'].max())
-                #st.dataframe(wodf1)
+                
+                
                 maxdf = wo_db.fetch().items
                 maxdf1 = pd.DataFrame(maxdf)
                 maxdf1 = maxdf1[maxdf1['name'] == st.session_state.user_name]
