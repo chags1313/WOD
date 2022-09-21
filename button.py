@@ -90,8 +90,9 @@ with st.sidebar:
     
 if menu == 'Account':
     st.header("Welcome to HWOD 🏋️‍")
+    user_name = st.text_input("Enter your user name")
     if 'user_name' not in st.session_state:
-        st.session_state.user_name = st.text_input("Enter your user name")
+        st.session_state.user_name = user_name
 
         #st.session_state.user_name = st.text_input("User Name", value = st.session_state.user_name)
 
@@ -103,12 +104,10 @@ if menu == 'Account':
         df = pd.DataFrame(result)
         user_check_df = df[df['user_name'] == st.session_state.user_name]
         user_check_df = user_check_df.reset_index()
-        st.write(user_check_df)
-        st.write('pass', st.session_state.password)
-        st.write('user', st.session_state.user_name)
         if  st.session_state.password == user_check_df['password'].max():
             st.session_state.auth_status = True
             db.put({"user_name": st.session_state.user_name, "password": st.session_state.password})
+            st.success("Lookin good " + st.session_state.user_name, icon = '🤘')
         else:
             st.error("Incorrect password or user name. Please try again.")
 
