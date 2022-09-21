@@ -6,5 +6,4 @@ streamlit-webrtc
 streamlit
 pandas
 numpy
-opencv-python
 deta
