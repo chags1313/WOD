@@ -136,6 +136,7 @@ if menu == 'Account':
         height = st.text_input("Height")
       result1 = wo_db.fetch().items
       df1 = pd.DataFrame(result1)
+      st.write(df1)
       user_check_df1 = df1[df1['user_name'] == st.session_state.user_name]
       workouts1 = user_check_df1[user_check_df1['Movements'].str.len() > 1]
       weights1 = user_check_df1[user_check_df1['weight'] > 0.00]
