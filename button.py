@@ -142,8 +142,10 @@ if menu == 'Account':
       colored_header("Records")
       sid1, sid2 = st.columns(2)
       with sid1:
+        colored_header("Workouts")
         st.dataframe(workouts1[['date', 'Workout', 'Performance']])
       with sid2:
+        colored_header("Max PRs")
         st.dataframe(weights1[['date', 'lift', 'weight']])
       
     
