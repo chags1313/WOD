@@ -126,7 +126,26 @@ if menu == 'Account':
       if forgot_password:
           st.info("Please reach out to Cole @ hagencolej@gmail.com")
     else:
-      st.info("Keep up the good work" + st.session_state.user_name, icon = '🤘')
+      colored_header(st.session_state.user_name)
+      dems1, dems2 = st.columns(2)
+      with dems1:
+        age = st.text_input("Age")
+        sex = st.text_input("Sex")
+      with dems2:
+        weigh = st.text_input("Body Weight")
+        height = st.text_input("Height")
+      result1 = db.fetch().items
+      df1 = pd.DataFrame(result1)
+      user_check_df1 = df1[df1['user_name'] == st.session_state.user_name]
+      workouts1 = user_check_df1[user_check_df1['Movements'].str.len() > 1]
+      weights1 = user_check_df1[user_check_df1['weight'] > 0.00]
+      colored_header("Records")
+      sid1, sid2 = st.columns(2)
+      with sid1:
+        st.dataframe(workouts1[['date', 'Workout', 'Performance']])
+      with sid2:
+        st.dataframe(weights1['date', 'lift', 'weight'])
+      
     
 if menu == 'Home':
     if 'num' not in st.session_state:
