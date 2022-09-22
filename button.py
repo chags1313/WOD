@@ -127,6 +127,7 @@ if menu == 'Account':
           st.info("Please reach out to Cole @ hagencolej@gmail.com")
     else:
       colored_header(st.session_state.user_name)
+      affiliation = st.text_input("Gym Affiliation")
       dems1, dems2 = st.columns(2)
       with dems1:
         age = st.text_input("Age")
