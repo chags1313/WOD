@@ -139,7 +139,6 @@ if menu == 'Account':
       user_check_df1 = df1[df1['name'] == st.session_state.user_name]
       workouts1 = user_check_df1[user_check_df1['Movements'].str.len() > 1]
       weights1 = user_check_df1[user_check_df1['weight'] > 1]
-      colored_header("Records")
       sid1, sid2 = st.columns(2)
       with sid1:
         colored_header("Workouts")
