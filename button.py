@@ -24,7 +24,7 @@ from numpy import random
 #st.session_state.user_name = None
 
 st.set_page_config(layout="wide",
-    page_title="Home WOD",
+    page_title="DailyWOD",
     page_icon="weight_lifter")
 
 #hide streamlit menu bar
