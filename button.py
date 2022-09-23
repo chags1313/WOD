@@ -2473,6 +2473,7 @@ if menu == 'Max':
                 maxtable['10%'].iloc[ind] = int(maxlft) * 0.10
                 maxtable['5%'].iloc[ind]= int(maxlft) * 0.05
             ind = ind + 1
+            
 
         st.dataframe(maxtable.astype(str).replace('.0', ' ').style.background_gradient())
     else:
