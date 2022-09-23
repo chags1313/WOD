@@ -84,19 +84,19 @@ def colored_header(label, description=None, color=None):
 df = pd.DataFrame({'time': [1, 2, 3, 4, 5], 'weight': [160, 161, 166, 165, 167], 'calories': [114, 75, 84, 165, 167]})
 
 with st.sidebar:
-    menu = option_menu(None, ["Account", "Home", "Workout Repo", 'Max'], 
+    menu = option_menu(None, ["Account", "Dashboard", "Workouts", 'Max'], 
     icons=['person-lines-fill',  "house", 'table', 'graph-up', 'table'], 
     menu_icon="cast", default_index=1, orientation="vertical")
     
 if menu == 'Account':
     st.header("Welcome to DailyWOD 🏋️‍")
     if 'auth_status' not in st.session_state:
-      user_name = st.text_input("Enter your user name")
+      user_name = st.text_input("User Name")
       st.session_state.user_name = user_name
 
           #st.session_state.user_name = st.text_input("User Name", value = st.session_state.user_name)
 
-      st.session_state.password = st.text_input("Enter your password",type = 'password')
+      st.session_state.password = st.text_input("Password",type = 'password')
 
       login_btn = st.button("Log In")
       if login_btn:
@@ -149,7 +149,7 @@ if menu == 'Account':
         st.dataframe(weights1[['date', 'lift', 'weight']])
       
     
-if menu == 'Home':
+if menu == 'Dashboard':
     if 'num' not in st.session_state:
         st.session_state.num = random.randint(len(wods))
     list_html = ""
@@ -2355,7 +2355,7 @@ $(function () {
 
 
     
-if menu == 'Workout Repo':
+if menu == 'Workouts':
     colored_header("Workouts")
     
     ms = st.selectbox("Search through workouts", options = wods['Workout'].unique())
@@ -2410,8 +2410,7 @@ if menu == 'Workout Repo':
 
 if menu == 'Max':
     if 'auth_status' in st.session_state:
-        colored_header("Track Max Progress")
-        with st.expander("Max Weight"):
+        with st.expander("Log Max Weight"):
             lift = st.selectbox('Select Lift',('Back Squats', 'Front Squats', 'Overhead Squat', 'Split Squat', 'Clean', 'Hang Clean', 'Power Clean', 'Squat Clean', 'Bench Press', 'Push Press', 'Shoulder Press', 'Snatch Grip Push Press', 'Deadlifts', 'Front Box Squat', 'Front Pause Squat', 'Overhead Squat', 'Push Jerk', 'Split Jerk', 'Squat Jerk', 'Hang Power Snatch', 'Hang Squat Snatch', 'Power Snatch', 'Snatch', 'Squat Snatch', 'Romainian Deadlift', 'Sumo Deadlift', 'Clean and Jerk', 'Power Clean and Jerk'))
             weight = st.number_input("Enter Weight")
             if st.button("➕"):
