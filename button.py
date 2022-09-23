@@ -2488,6 +2488,7 @@ if menu == 'Max':
 
     else:
       mtab = pd.read_csv('maxtable.csv')
+      colored_header("Max Table")
       st.dataframe(mtab.style.background_gradient(), height = 3000)
 
 
