@@ -2391,9 +2391,11 @@ if menu == 'Workouts':
     with side2:
         if 'auth_status' in st.session_state:
             with st.expander("Log This Workout"):
-                perf = st.text_input("Enter information about your workout")
+                rxscale = st.radio("", options=['RX', 'Scaled'])
+                perf = st.text_input("Time")
                 log = st.button("Log")
                 if log:
+                    st.balloons() 
                     wo_db.put({"name": st.session_state.user_name,"date": str(date), "Workout": ns['Workout'].iloc[0], "Rounds": ns['Rounds'].iloc[0], "Reps": ns['Reps'].iloc[0], "Max Time": ns['Max Time'].iloc[0], "Movements": ns['Movement'].iloc[0], "Performance": perf})
             with st.expander("Add Workout"):
                 wkt = st.text_input("Enter Workout Name")
@@ -2405,6 +2407,7 @@ if menu == 'Workouts':
     
                 log1 = st.button("Add")
                 if log1:
+                    st.balloons()
                     wo_db.put({"name": st.session_state.user_name, "date": str(date), "Workout": wkt, "Rounds": rds, "Reps": reps, "Max Time": mxtime, "Movements": mvmts, "Performance": perf1})
             
 
