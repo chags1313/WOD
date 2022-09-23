@@ -2473,9 +2473,7 @@ if menu == 'Max':
                 maxtable['10%'].iloc[ind] = int(maxlft) * 0.10
                 maxtable['5%'].iloc[ind]= int(maxlft) * 0.05
             ind = ind + 1
-        st.dataframe(maxtable.style.background_gradient())
-        colored_header("Records")
-        st.dataframe(maxdf1[['lift', 'weight', 'date']])
+        st.dataframe(maxtable.round(decimals=0).astype(object).style.background_gradient())
     else:
         st.markdown("![Alt Text](https://i0.wp.com/www.signsrxusa.com/wp-content/uploads/2020/07/Percentage-Charts-55-550.png?resize=1200%2C800&ssl=1)")
 
