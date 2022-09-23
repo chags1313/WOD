@@ -2480,7 +2480,10 @@ if menu == 'Max':
         with maxsid1:
           colored_header("Reference Table")
           mtab = pd.read_csv('maxtable.csv')
-          st.dataframe(mtab.style.background_gradient())
+          with st.slider("Weight", min_value= 55, max_value = 455, value = 55, label_visibility = 'hidden') as mx:
+            mtab1 = mtab[mtab['1 Rep Max'] == mx]
+            st.dataframe(mtab1)
+
     else:
       mtab = pd.read_csv('maxtable.csv')
       st.dataframe(mtab.style.background_gradient())
