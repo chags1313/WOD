@@ -2482,7 +2482,7 @@ if menu == 'Max':
           mtab = pd.read_csv('maxtable.csv')
           if 'vl' not in st.session_state:
             st.session_state.vl = 55
-          mx = st.slider("Weight", min_value= 55, max_value = 455, value = st.session_state.vl, step = 5)
+          st.session_state.vl = st.slider("Weight", min_value= 55, max_value = 455, value = st.session_state.vl, step = 5)
           mtab1 = mtab[mtab['1 Rep Max'] == mx]
           st.dataframe(mtab1.style.background_gradient())
 
