@@ -2475,10 +2475,10 @@ if menu == 'Max':
             ind = ind + 1
 
         maxsid1, maxsid2 = st.columns(2)
-        with maxsid1:
+        with maxsid2:
           colored_header("Your Table")
           st.dataframe(maxtable.astype(str).replace('.0', ' ').style.background_gradient())
-        with maxsid2:
+        with maxsid1:
           colored_header("Reference Table")
           mtab = pd.read_csv('maxtable.csv')
           st.dataframe(mtab.style.background_gradient())
