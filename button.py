@@ -2478,6 +2478,8 @@ if menu == 'Max':
 
         st.dataframe(maxtable.astype(str).replace('.0', ' ').style.background_gradient())
         colored_header("Reference Table")
+        mtab = pd.read_csv('maxtable.csv')
+        st.dataframe(mtab.style.background_gradient())
     else:
       mtab = pd.read_csv('maxtable.csv')
       st.dataframe(mtab.style.background_gradient())
