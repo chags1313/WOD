@@ -2391,24 +2391,25 @@ if menu == 'Workouts':
     with side2:
         if 'auth_status' in st.session_state:
             with st.expander("Log This Workout"):
-                rxscale = st.radio("", options=['RX', 'Scaled'])
-                perf = st.text_input("Time")
+                rxscale = st.radio("", options=['RX', 'Scaled'], horizontal = True)
+                perf = st.text_input("Time or Reps")
                 log = st.button("Log")
                 if log:
                     st.balloons() 
-                    wo_db.put({"name": st.session_state.user_name,"date": str(date), "Workout": ns['Workout'].iloc[0], "Rounds": ns['Rounds'].iloc[0], "Reps": ns['Reps'].iloc[0], "Max Time": ns['Max Time'].iloc[0], "Movements": ns['Movement'].iloc[0], "Performance": perf})
+                    wo_db.put({"name": st.session_state.user_name,"date": str(date), "Workout": ns['Workout'].iloc[0], "Rounds": ns['Rounds'].iloc[0], "Reps": ns['Reps'].iloc[0], "Max Time": ns['Max Time'].iloc[0], "Movements": ns['Movement'].iloc[0], "Performance": perf,, "RX/Scaled": rxscale})
             with st.expander("Add Workout"):
                 wkt = st.text_input("Enter Workout Name")
                 rds = st.number_input("Rounds")
                 reps = st.text_input("Reps")
                 mxtime = st.number_input("Max Time")
                 mvmts = st.text_input("Movements")
-                perf1 = st.text_input("Enter more information about your workout")
+                rxscale = st.radio("_", options=['RX', 'Scaled'], horizontal = True)
+                perf1 = st.text_input("Time/Reps")
     
                 log1 = st.button("Add")
                 if log1:
                     st.balloons()
-                    wo_db.put({"name": st.session_state.user_name, "date": str(date), "Workout": wkt, "Rounds": rds, "Reps": reps, "Max Time": mxtime, "Movements": mvmts, "Performance": perf1})
+                    wo_db.put({"name": st.session_state.user_name, "date": str(date), "Workout": wkt, "Rounds": rds, "Reps": reps, "Max Time": mxtime, "Movements": mvmts, "Performance": perf1, "RX/Scaled": rxscale})
             
 
 if menu == 'Max':
