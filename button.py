@@ -2416,7 +2416,7 @@ if menu == 'Max':
     if 'auth_status' in st.session_state:
         with st.expander("Log Max Weight"):
             lift = st.selectbox('Select Lift',('Back Squats', 'Front Squats', 'Overhead Squat', 'Split Squat', 'Clean', 'Hang Clean', 'Power Clean', 'Squat Clean', 'Bench Press', 'Push Press', 'Shoulder Press', 'Snatch Grip Push Press', 'Deadlifts', 'Front Box Squat', 'Front Pause Squat', 'Overhead Squat', 'Push Jerk', 'Split Jerk', 'Squat Jerk', 'Hang Power Snatch', 'Hang Squat Snatch', 'Power Snatch', 'Snatch', 'Squat Snatch', 'Romainian Deadlift', 'Sumo Deadlift', 'Clean and Jerk', 'Power Clean and Jerk'))
-            weight = st.number_input("Enter Weight")
+            weight = st.number_input("Enter Weight", step = 0.5)
             if st.button("➕"):
                 wo_db.put({"name": st.session_state.user_name, "date": str(date), "lift": lift, "weight": weight})
                 st.success("SUCCESSFULLY ADDED: {}".format(lift))
