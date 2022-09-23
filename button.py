@@ -2481,9 +2481,8 @@ if menu == 'Max':
           colored_header("Reference Table")
           mtab = pd.read_csv('maxtable.csv')
           mx = st.slider("Weight", min_value= 55, max_value = 455, value = 55)
-          with mx:
-            mtab1 = mtab[mtab['1 Rep Max'] == mx]
-            st.dataframe(mtab1)
+          mtab1 = mtab[mtab['1 Rep Max'] == mx]
+          st.dataframe(mtab1)
 
     else:
       mtab = pd.read_csv('maxtable.csv')
