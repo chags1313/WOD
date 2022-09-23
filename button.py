@@ -2488,7 +2488,7 @@ if menu == 'Max':
 
     else:
       mtab = pd.read_csv('maxtable.csv')
-      st.dataframe(mtab.style.background_gradient(), height = 1000)
+      st.dataframe(mtab.style.background_gradient(), height = 2000)
 
 
                 
