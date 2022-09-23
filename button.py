@@ -2476,7 +2476,8 @@ if menu == 'Max':
 
         st.dataframe(maxtable.astype(str).replace('.0', ' ').style.background_gradient())
     else:
-        st.markdown("![Alt Text](https://i0.wp.com/www.signsrxusa.com/wp-content/uploads/2020/07/Percentage-Charts-55-550.png?resize=1200%2C800&ssl=1)")
+      mtab = pd.read_csv('maxtable.csv')
+      st.dataframe(mtab.style.background_gradient())
 
 
                 
