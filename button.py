@@ -2334,11 +2334,12 @@ $(function () {
                 maxdf1 = maxdf1[maxdf1['weight'] > 0.00]
                 lastmax = maxdf1['date'].max()
                 maxdf2 = maxdf1[maxdf1['date'] == lastmax]
+                
                 maxdf2 = maxdf2.reset_index()
-                #rpmx = maxdf2.iloc[0]
                 repmax_lift = maxdf2['lift'].iloc[0]
-                repmax_min = min(repmax_lift['weight'])
-                repmax_weight = max(repmax_lift['weight'])
+                maxdf22 = maxdf2[maxdf2['lift'] == repmax_lift]
+                repmax_min = min(maxdf22['weight'])
+                repmax_weight = max(maxdf22['weight'])
                 metric_string = "Last Max: " + str(repmax_lift)
                 repmax_diff = int(repmax_weight) - int(repmax_min)
 
