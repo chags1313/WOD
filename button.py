@@ -2354,7 +2354,7 @@ $(function () {
 
     
 if menu == 'Workout Repo':
-    colored_header("Workout Repository")
+    colored_header("Workouts")
     
     ms = st.selectbox("Search through workouts", options = wods['Workout'].unique())
     ns = wods[wods['Workout'] == ms]
@@ -2421,7 +2421,6 @@ if menu == 'Max':
         maxdf1['weight'] = maxdf1['weight'].astype(float)
         maxdf1 = maxdf1[maxdf1['weight'] > 0.00]
         
-        colored_header("Percentage Table")
         maxtable = pd.DataFrame()
         maxtable['Lifts'] = maxdf1['lift'].unique()
         ind = 0
