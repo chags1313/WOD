@@ -20,9 +20,7 @@ from datetime import date
 import itertools
 from numpy import random
 
-#st.session_state.auth_status = None
-#st.session_state.user_name = None
-
+#set page config settings
 st.set_page_config(layout="wide",
     page_title="DailyWOD",
     page_icon="weight_lifter")
@@ -36,27 +34,20 @@ hide_streamlit_style = """
         """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
+#calling database
 deta = Deta("b02l5gt3_MFtTQuHFmWUEofyrn54FjjnWxAevcaY1")
 wo_db = deta.Base("wodb")
 db = deta.Base("fitusers")
 
 
 
-
+#getting todays date
 date = date.today()
-
-
-
-
-
-
+#getting workouts
 url = 'wods.csv'
 wods = pd.read_csv(url)
 
-
-
-
-
+#header colors
 HEADER_COLOR_CYCLE = itertools.cycle(
     [
         "#00c0f2",  # light-blue-70",
@@ -69,6 +60,7 @@ HEADER_COLOR_CYCLE = itertools.cycle(
         "#faca2b",  # "yellow-80",
     ]
 )
+#underline header function
 def colored_header(label, description=None, color=None):
     """Shows a header with a colored underline and an optional description."""
     st.write("")
@@ -81,21 +73,22 @@ def colored_header(label, description=None, color=None):
     )
     if description:
         st.caption(description)
-df = pd.DataFrame({'time': [1, 2, 3, 4, 5], 'weight': [160, 161, 166, 165, 167], 'calories': [114, 75, 84, 165, 167]})
 
+        
+##### UI ######
+
+#option menu
 with st.sidebar:
     menu = option_menu(None, ["Account", "Dashboard", "Workouts", 'Max'], 
     icons=['person-lines-fill',  "house", 'table', 'graph-up', 'table'], 
     menu_icon="cast", default_index=1, orientation="vertical")
+    
     
 if menu == 'Account':
     st.header("Welcome to DailyWOD 🏋️‍")
     if 'auth_status' not in st.session_state:
       user_name = st.text_input("User Name")
       st.session_state.user_name = user_name
-
-          #st.session_state.user_name = st.text_input("User Name", value = st.session_state.user_name)
-
       st.session_state.password = st.text_input("Password",type = 'password')
 
       login_btn = st.button("Log In")
