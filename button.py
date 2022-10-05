@@ -2311,6 +2311,7 @@ $(function () {
         components.iframe('https://asl--learn.glitch.me/', height = 500)
 
     with column1:
+      components.iframe('https://asl--learn.glitch.me/', height = 500)
         colored_header("Workout of the Day")
         components.html(full_html, height=290)
         if 'auth_status' in st.session_state:
