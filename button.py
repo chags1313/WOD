@@ -2386,7 +2386,7 @@ $(function () {
 </script>
 
         """
-        componenets.html(tm, height = 500)
+        components.html(tm, height = 500)
 
     with column1:
         colored_header("Workout of the Day")
