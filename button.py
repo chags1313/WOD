@@ -2384,13 +2384,22 @@ $(function () {
         }
     }
 </script>
+<tm-run enableexport="" id="run" class="panel">
+                            
+            <tm-webcam-sample-input autorecord="" runsample="true" open="" disabled="">
+            </tm-webcam-sample-input>
+            <tm-file-sample-input accept="image/png, image/jpg, image/jpeg, image/bmp" }="" label="Click to choose .png or .jpg, or drag to upload" runsample="true" disabled="">
+                    <div id="file-container"></div>
+            </tm-file-sample-input>
+        
+                        </tm-run>
 </body></html>
 """
     column1, column2 = st.columns(2)
     with column2:
         components.html(cals, height=550)
        
-        components.html(tm, height = 500, unsafe_allow_html=True)
+        components.html(tm, height = 500)
 
     with column1:
         colored_header("Workout of the Day")
