@@ -2390,7 +2390,7 @@ $(function () {
     with column2:
         components.html(cals, height=550)
        
-        components.html(tm, height = 500)
+        components.html(tm, height = 500, unsafe_allow_html=True)
 
     with column1:
         colored_header("Workout of the Day")
